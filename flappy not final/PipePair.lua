@@ -12,7 +12,7 @@ PipePair = Class{}
 
 -- size of the gap between pipes
 
---local GAP_HEIGHT = 90 + math.random(-30,30)
+local GAP_HEIGHT = 140
 
 
 function PipePair:init(y,gapHeight)
@@ -29,7 +29,7 @@ function PipePair:init(y,gapHeight)
     -- instantiate two pipes that belong to this pair
     self.pipes = {
         ['upper'] = Pipe('top', self.y),
-        ['lower'] = Pipe('bottom', math.min(self.y + PIPE_HEIGHT + gapHeight, VIRTUAL_HEIGHT - 40))
+        ['lower'] = Pipe('bottom', math.random(GAP_HEIGHT, GAP_HEIGHT + 40))
     }
 
     -- gap value variable
